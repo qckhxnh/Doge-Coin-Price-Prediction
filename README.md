@@ -1,9 +1,10 @@
 # Doge-Coin-Price-Prediction
 
 **Dataset:** https://www.kaggle.com/datasets/neelgajare/dogecoin-historical-price-data
-**Jupyter Notebook:** https://github.com/qckhxnh/Doge-Coin-Price-Prediction
-**Acknowledgment:** I have used the help of ChatGPT to learn about the LSTM model and how to implement it in Python. However, I have not copied any text or code directly from this channel. I have also mentioned OpenAI in the citations list.
 
+**Jupyter Notebook:** https://github.com/qckhxnh/Doge-Coin-Price-Prediction
+
+**Acknowledgment:** I have used the help of ChatGPT to learn about the LSTM model and how to implement it in Python. However, I have not copied any text or code directly from this channel. I have also mentioned OpenAI in the citations list.
 
 **I. Introduction:**
 
@@ -28,7 +29,7 @@ There are 7 columns:
 
 We will use this dataset in this project and perform simple machine learning with Python on a Jupyter Notebook to predict the price of DOGE over time. The code is developed in Python and utilizes popular libraries such as pandas for data manipulation, scikit-learn for machine learning, and TensorFlow for deep learning.
 
-**II. Machine Learning Model**:
+****II. Machine Learning Model**:**
 
 The machine learning model employed in this project is a Long Short-Term Memory (LSTM) neural network. LSTMs are a type of recurrent neural network (RNN) designed to capture and learn patterns in sequential data, making them well-suited for time series prediction tasks. The model is trained on historical Dogecoin price data to learn patterns and trends that can be used to make predictions about future prices.
 
