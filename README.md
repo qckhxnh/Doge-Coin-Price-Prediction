@@ -1,3 +1,6 @@
+![image](https://github.com/qckhxnh/Doge-Coin-Price-Prediction/assets/117861644/4e552174-aaf9-4bfc-9c41-0efeaa0c8ccd)
+
+
 # Doge-Coin-Price-Prediction
 
 **Dataset:** https://www.kaggle.com/datasets/neelgajare/dogecoin-historical-price-data
