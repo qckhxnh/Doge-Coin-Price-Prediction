@@ -2,7 +2,9 @@
 
 **Dataset:** https://www.kaggle.com/datasets/neelgajare/dogecoin-historical-price-data
 
+
 **Jupyter Notebook:** https://github.com/qckhxnh/Doge-Coin-Price-Prediction
+
 
 **Acknowledgment:** I have used the help of ChatGPT to learn about the LSTM model and how to implement it in Python. However, I have not copied any text or code directly from this channel. I have also mentioned OpenAI in the citations list.
 
