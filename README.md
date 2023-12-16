@@ -1,7 +1,9 @@
 # DogeCoin Price Prediction with LSTM
 
-Jupyter Notebook Link: Doge-Coin-Price-Prediction
-Dataset Link: DogeCoin Historical Price Data
+**Dataset:** https://www.kaggle.com/datasets/neelgajare/dogecoin-historical-price-data
+
+
+**Jupyter Notebook:** https://github.com/qckhxnh/Doge-Coin-Price-Prediction
 
 
 ## I. Introduction
