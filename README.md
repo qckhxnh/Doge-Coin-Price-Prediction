@@ -1,9 +1,3 @@
-![image](https://github.com/qckhxnh/Doge-Coin-Price-Prediction/assets/117861644/4e552174-aaf9-4bfc-9c41-0efeaa0c8ccd)
-
-Certainly! Below is a formatted version of the content you provided, suitable for a README file on your GitHub project:
-
----
-
 # DogeCoin Price Prediction with LSTM
 
 ## I. Introduction
@@ -80,6 +74,8 @@ plt.ylabel('Closing Price')
 plt.legend()
 plt.show()
 ```
+
+![image](https://github.com/qckhxnh/Doge-Coin-Price-Prediction/assets/117861644/4e552174-aaf9-4bfc-9c41-0efeaa0c8ccd)
 
 ## IV. References
 
