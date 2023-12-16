@@ -1,51 +1,91 @@
 ![image](https://github.com/qckhxnh/Doge-Coin-Price-Prediction/assets/117861644/4e552174-aaf9-4bfc-9c41-0efeaa0c8ccd)
 
+Certainly! Below is a formatted version of the content you provided, suitable for a README file on your GitHub project:
 
-# Doge-Coin-Price-Prediction
+---
 
-**Dataset:** https://www.kaggle.com/datasets/neelgajare/dogecoin-historical-price-data
+# DogeCoin Price Prediction with LSTM
 
+## I. Introduction
 
-**Jupyter Notebook:** https://github.com/qckhxnh/Doge-Coin-Price-Prediction
+DogeCoin (DOGE) is a cryptocurrency created as a humorous response to the speculative nature of cryptocurrencies. Initially considered a joke, it gained substantial popularity and reached a market capitalization of over $85 billion in May 2021. This project utilizes the DogeCoin Historical Price Dataset to perform time series prediction of DOGE prices using machine learning.
 
+### Dataset
 
-**Acknowledgment:** I have used the help of ChatGPT to learn about the LSTM model and how to implement it in Python. However, I have not copied any text or code directly from this channel. I have also mentioned OpenAI in the citations list.
-
-**I. Introduction:**
-
-DogeCoin (DOGE) is a cryptocurrency created by two software engineers, Billy Markus and Jackson Palmer, named after the Shiba Inu dog from the "doge" meme. It began as a 'joke' to mock the irrational speculation in cryptocurrencies at the time. Some, however, believe it is a viable investment opportunity. DOGE was introduced on December 6, 2013, and quickly grew its online community, eventually reaching a market capitalization of more than $85 billion on May 5, 2021.
-
-The DogeCoin Historical Price Dataset contains 1018 text files with comma-separated values, each representing historical data for each company. The data in each file contains daily stock data for the company from when it became public to July 28, 2022.
-There are 7 columns:
+The dataset consists of 1018 text files, each containing historical data for DogeCoin. The columns include:
 
 - Date
-
 - Open
-
 - High
-
 - Low
-
 - Close
-
-- Adjusted close price for splits and dividend and capital gain distributions
-
+- Adjusted close price
 - Volume
 
-We will use this dataset in this project and perform simple machine learning with Python on a Jupyter Notebook to predict the price of DOGE over time. The code is developed in Python and utilizes popular libraries such as pandas for data manipulation, scikit-learn for machine learning, and TensorFlow for deep learning.
+## II. Machine Learning Model
 
-****II. Machine Learning Model**:**
+The machine learning model employed is a Long Short-Term Memory (LSTM) neural network, a type of recurrent neural network (RNN) designed for sequential data. The model is trained on historical Dogecoin price data to predict future prices.
 
-The machine learning model employed in this project is a Long Short-Term Memory (LSTM) neural network. LSTMs are a type of recurrent neural network (RNN) designed to capture and learn patterns in sequential data, making them well-suited for time series prediction tasks. The model is trained on historical Dogecoin price data to learn patterns and trends that can be used to make predictions about future prices.
+### Building the LSTM Model
 
-**III. Results:**
+```python
+# Function to create sequences for training
+def create_sequences(data, look_back):
+    X, y = [], []
+    for i in range(len(data) - look_back):
+        X.append(data[i:(i + look_back), 0])
+        y.append(data[i + look_back, 0])
+    return np.array(X), np.array(y)
 
-The prediction method is used to make predictions on the test data (X_test). The output (predicted_prices) contains the model's predictions for the closing prices of Dogecoin. Since the data was normalized during training, it's necessary to inverse-transform the predicted prices back to their original scale. This is done using the inverse_transform method of the scaler.
+look_back = 20
+X, y = create_sequences(df_normalized, look_back)
 
-Mean Squared Error: 0.0006048302769427443. The MSE of 0.0006048302769427443 is relatively low, indicating that the LSTM model predicts Dogecoin prices with a small average squared difference. 
+# Building the LSTM model
+model = Sequential()
+model.add(LSTM(units=50, input_shape=(X_train.shape[1], 1)))
+model.add(Dense(units=1))
+model.compile(optimizer='adam', loss='mean_squared_error')
 
-**IV. References:**
+# Training the model
+model.fit(X_train, y_train, epochs=50, batch_size=64)
+```
 
-- Time Series forecasting and Recurrent neural network.  Tensorflow Core (no date) TensorFlow. Available at: https://www.tensorflow.org/tutorials/structured_data/time_series#recurrent_neural_network (Accessed: 22 November 2023). 
+### III. Results
 
-- OpenAI. (2023). GPT-3.5, a product of OpenAI. Accessed on November, 2023. Available at: https://chat.openai.com.
+#### Making Predictions
+
+```python
+predictions = model.predict(X_test)
+predictions = scaler.inverse_transform(predictions)
+```
+
+#### Model Evaluation: Mean Squared Error
+
+```python
+mse = mean_squared_error(df['Close'].iloc[train_size + look_back:], predictions)
+print(f'Mean Squared Error: {mse}')
+```
+
+Mean Squared Error: 0.0006048302769427443
+
+#### Plotting the Results
+
+```python
+plt.figure(figsize=(12, 6))
+plt.plot(df.index[train_size + look_back:], df['Close'].iloc[train_size + look_back:], label='Actual Price')
+plt.plot(df.index[train_size + look_back:], predictions, label='Predicted Price', color='red')
+plt.title('Doge-Coin Price Prediction with LSTM')
+plt.xlabel('Date')
+plt.ylabel('Closing Price')
+plt.legend()
+plt.show()
+```
+
+## IV. References
+
+- Time Series forecasting and Recurrent neural network. [TensorFlow Core](https://www.tensorflow.org/tutorials/structured_data/time_series#recurrent_neural_network).
+- OpenAI. (2023). GPT-3.5, a product of OpenAI. [OpenAI ChatGPT](https://chat.openai.com).
+
+---
+
+Feel free to customize this README according to your preferences and add any additional sections or details that might be relevant to your project.
