@@ -9,6 +9,7 @@
 **Acknowledgment:** I have used the help of ChatGPT to learn about the LSTM model and how to implement it in Python. However, I have not copied any text or code directly from this channel. I have also mentioned OpenAI in the citations list.
 
 
+
 ## I. Introduction
 
 DogeCoin (DOGE) is a cryptocurrency created as a humorous response to the speculative nature of cryptocurrencies. Initially considered a joke, it gained substantial popularity and reached a market capitalization of over $85 billion in May 2021. This project utilizes the DogeCoin Historical Price Dataset to perform time series prediction of DOGE prices using machine learning.
