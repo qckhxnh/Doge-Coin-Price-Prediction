@@ -1,5 +1,9 @@
 # DogeCoin Price Prediction with LSTM
 
+Jupyter Notebook Link: Doge-Coin-Price-Prediction
+Dataset Link: DogeCoin Historical Price Data
+
+
 ## I. Introduction
 
 DogeCoin (DOGE) is a cryptocurrency created as a humorous response to the speculative nature of cryptocurrencies. Initially considered a joke, it gained substantial popularity and reached a market capitalization of over $85 billion in May 2021. This project utilizes the DogeCoin Historical Price Dataset to perform time series prediction of DOGE prices using machine learning.
@@ -81,7 +85,3 @@ plt.show()
 
 - Time Series forecasting and Recurrent neural network. [TensorFlow Core](https://www.tensorflow.org/tutorials/structured_data/time_series#recurrent_neural_network).
 - OpenAI. (2023). GPT-3.5, a product of OpenAI. [OpenAI ChatGPT](https://chat.openai.com).
-
----
-
-Feel free to customize this README according to your preferences and add any additional sections or details that might be relevant to your project.
